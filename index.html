@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>CatchBubbles</title>
+
+		<style>
+			body {
+				background:#000;
+				color:#fff;
+				padding:0;
+				margin:0;
+				overflow:hidden;
+				font-family:georgia;
+				text-align:center;
+			}
+			#loading{
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				position:absolute;
+				padding:10px;
+				margin:0 auto;
+				color:#000;
+				background-color:#fff;
+				padding-top:20%;
+			}
+			#menu{
+				position:absolute;
+				top:0;
+				left:0;
+				height:55px;
+				width:100%;
+				background-color:rgba(0,0,0,0.85);
+				color:white;
+				border-bottom-right-radius: 50px;
+				border-bottom-left-radius: 50px;
+				border-bottom: 3px solid white;
+			}
+			#menu ul{
+				margin:0 0 0 200px;
+				padding:0;
+				text-align:left;
+				line-height: 52px;
+			}
+			#menu li{
+				list-style: none;
+				display: inline-block;
+				text-align:left;
+				padding:0 15px 0 15px;
+				margin:0 15px 0 15px;
+			}
+			#menu li.important{
+				background-color:white;
+				color:#000;
+			}
+			#die{
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				position:absolute;
+				padding:10px;
+				margin:0 auto;
+				color:#fff;
+				background-color:#ff0000;
+				padding-top:20%;
+				display:none;
+			}
+			#die a{
+				color:white;
+			}
+			#win{
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				position:absolute;
+				padding:10px;
+				margin:0 auto;
+				color:#fff;
+				background-color:#0000ff;
+				padding-top:20%;
+				display:none;
+			}
+			#win a{
+				color:white;
+			}
+		</style>
+
+		<script src="js/three.js"></script>
+
+		<script src="js/Detector.js"></script>
+		<script src="js/libs/stats.min.js"></script>
+		<script src="js/libs/buzz.js"></script>
+		<script src="js/controls/FirstPersonControls.js"></script>
+		<script src="js/loaders/ColladaLoader.js"></script>
+		<script src="js/THREEx.KeyboardState.js"></script>
+		<script src="js/THREEx.FullScreen.js"></script>
+		<script src="js/THREEx.WindowResize.js"></script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="game.js"></script>
+		<script type="text/javascript">
+		jQuery(function($){
+			
+		});
+		</script>
+	</head>
+	<body>
+		<div id="loading">Chargement en cours <span></span>, veuillez patienter...</div>
+		<div id="die"><h1>Vous êtes mort...</h1></div>
+		<div id="win"><h1>Vous avez gagné ! <a href="javascript:window.location.reload();">Recommencer ?</a></h1></div>
+		<div id="menu">
+			<ul>
+				<li>Bulles : <span id="bulles">10</span></li>
+				<li>Sucettes : <span id="sucettes">3</span></li>
+				<li>Vies : <span id="vies">3</span></li>
+				<li>Mode chasseur : <span id="hunt">0</span> s</li>
+			</ul>
+		</div>
+		<div id="gamecanvas"></div>
+	</body>
+</html>
